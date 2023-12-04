@@ -11,6 +11,10 @@ import (
 
 var input []string
 
+func TestSolutionF(t *testing.T) {
+	assert.Equal(t, 54953, solutionF(input))
+}
+
 func TestSolution(t *testing.T) {
 	assert.Equal(t, 54953, solution(input))
 }

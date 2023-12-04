@@ -7,16 +7,23 @@ import (
 	"github.com/samber/lo"
 )
 
-func solution(input []string) int {
-	re := regexp.MustCompile("[0-9]")
+var re = regexp.MustCompile("[0-9]")
 
+func solutionF(input []string) int {
 	return lo.Reduce(input, func(acc int, line string, _ int) int {
-		ints := re.FindAllString(line, -1)
-		if len(ints) == 0 {
-			return acc
-		}
-
-		number, _ := strconv.Atoi(ints[0] + ints[len(ints)-1])
-		return acc + number
+		nums := re.FindAllString(line, -1)
+		num, _ := strconv.Atoi(nums[0] + nums[len(nums)-1])
+		return acc + num
 	}, 0)
+}
+
+func solution(input []string) int {
+	acc := 0
+	for _, line := range input {
+		nums := re.FindAllString(line, -1)
+		num, _ := strconv.Atoi(nums[0] + nums[len(nums)-1])
+		acc += num
+	}
+
+	return acc
 }
