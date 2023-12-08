@@ -1,4 +1,4 @@
-package day01
+package day02
 
 import (
 	"bufio"
@@ -12,23 +12,8 @@ import (
 var input []string
 
 func TestSolution(t *testing.T) {
-	assert.Equal(t, 54953, solution(input))
-}
-
-func TestSolutionF(t *testing.T) {
-	assert.Equal(t, 54953, solutionF(input))
-}
-
-func BenchmarkSolution(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		_ = solution(input)
-	}
-}
-
-func BenchmarkSolutionF(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		_ = solutionF(input)
-	}
+	println(solution(input))
+	assert.Equal(t, 2439, solution(input))
 }
 
 func TestMain(m *testing.M) {
