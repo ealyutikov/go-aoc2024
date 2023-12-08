@@ -11,9 +11,12 @@ import (
 
 var input []string
 
-func TestSolution(t *testing.T) {
-	println(solution(input))
-	assert.Equal(t, 2439, solution(input))
+func TestSolutionA(t *testing.T) {
+	assert.Equal(t, 2439, solutionA(input))
+}
+
+func TestSolutionB(t *testing.T) {
+	assert.Equal(t, 2439, solutionB(input))
 }
 
 func TestMain(m *testing.M) {

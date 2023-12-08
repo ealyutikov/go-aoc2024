@@ -19,21 +19,24 @@ var (
 	rexNum   = regexp.MustCompile(`\d+`)
 )
 
-type Set struct {
-	red   int
-	green int
-	blue  int
-}
-
-type Game = map[int][]Set
-
-func solution(input []string) (sum int) {
+func solutionA(input []string) (sum int) {
 	game := parseGame(input)
 	for id, sets := range game {
 		if !check(sets) {
 			continue
 		}
 		sum = sum + id
+	}
+
+	return sum
+}
+
+func solutionB(input []string) (sum int) {
+	game := parseGame(input)
+	for _, sets := range game {
+		ps := power(sets)
+		res := ps.red * ps.green * ps.blue
+		sum = sum + res
 	}
 
 	return sum
