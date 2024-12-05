@@ -2,12 +2,13 @@ package day02
 
 import (
 	"bufio"
-	"fmt"
 	"log"
 	"os"
 	"strconv"
 	"strings"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 var levels [][]int
@@ -38,9 +39,5 @@ func TestMain(m *testing.M) {
 }
 
 func TestPartOne(t *testing.T) {
-	fmt.Printf("%v", levels)
-}
-
-func TestPartTwo(t *testing.T) {
-	fmt.Printf("%v", levels)
+	assert.Equal(t, 472, partOne(levels))
 }
