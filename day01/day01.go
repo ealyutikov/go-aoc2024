@@ -2,6 +2,8 @@ package day01
 
 import "slices"
 
+//https://adventofcode.com/2024/day/1
+
 func partOne(listA, listB []int) (result int) {
 	slices.Sort(listA)
 	slices.Sort(listB)

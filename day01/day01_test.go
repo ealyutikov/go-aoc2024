@@ -47,14 +47,14 @@ func TestMain(m *testing.M) {
 	m.Run()
 }
 
-func TestSolutionA(t *testing.T) {
+func TestPartOne(t *testing.T) {
 	assert.Equal(t, 2769675, partOne(inputL, inputR))
 }
 
-func TestSolutionB(t *testing.T) {
+func TestPartTwoLoop(t *testing.T) {
 	assert.Equal(t, 24643097, partTwoLoop(inputL, inputR))
 }
 
-func TestSolutionBB(t *testing.T) {
+func TestPartTwoMap(t *testing.T) {
 	assert.Equal(t, 24643097, partTwoMap(inputL, inputR))
 }
