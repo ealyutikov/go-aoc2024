@@ -13,7 +13,7 @@ func solutionA(listA, listB []int) (result int) {
 	return result
 }
 
-func solutionB(listA, listB []int) (result int) {
+func solutionBLoop(listA, listB []int) (result int) {
 	for a := 0; a < len(listA); a++ {
 		count := 0
 		for b := 0; b < len(listB); b++ {
@@ -23,6 +23,19 @@ func solutionB(listA, listB []int) (result int) {
 		}
 
 		result += listA[a] * count
+	}
+
+	return result
+}
+
+func solutionBMap(listA, listB []int) (result int) {
+	setB := map[int]int{}
+	for _, v := range listB {
+		setB[v] = setB[v] + 1
+	}
+
+	for _, v := range listA {
+		result += v * setB[v]
 	}
 
 	return result

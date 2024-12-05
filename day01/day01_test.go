@@ -52,5 +52,9 @@ func TestSolutionA(t *testing.T) {
 }
 
 func TestSolutionB(t *testing.T) {
-	assert.Equal(t, 24643097, solutionB(inputL, inputR))
+	assert.Equal(t, 24643097, solutionBLoop(inputL, inputR))
+}
+
+func TestSolutionBB(t *testing.T) {
+	assert.Equal(t, 24643097, solutionBMap(inputL, inputR))
 }
