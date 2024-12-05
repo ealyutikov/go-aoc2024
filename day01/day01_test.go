@@ -48,13 +48,13 @@ func TestMain(m *testing.M) {
 }
 
 func TestSolutionA(t *testing.T) {
-	assert.Equal(t, 2769675, solutionA(inputL, inputR))
+	assert.Equal(t, 2769675, partOne(inputL, inputR))
 }
 
 func TestSolutionB(t *testing.T) {
-	assert.Equal(t, 24643097, solutionBLoop(inputL, inputR))
+	assert.Equal(t, 24643097, partTwoLoop(inputL, inputR))
 }
 
 func TestSolutionBB(t *testing.T) {
-	assert.Equal(t, 24643097, solutionBMap(inputL, inputR))
+	assert.Equal(t, 24643097, partTwoMap(inputL, inputR))
 }

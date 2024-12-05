@@ -2,7 +2,7 @@ package day01
 
 import "slices"
 
-func solutionA(listA, listB []int) (result int) {
+func partOne(listA, listB []int) (result int) {
 	slices.Sort(listA)
 	slices.Sort(listB)
 
@@ -13,7 +13,7 @@ func solutionA(listA, listB []int) (result int) {
 	return result
 }
 
-func solutionBLoop(listA, listB []int) (result int) {
+func partTwoLoop(listA, listB []int) (result int) {
 	for a := 0; a < len(listA); a++ {
 		count := 0
 		for b := 0; b < len(listB); b++ {
@@ -28,7 +28,7 @@ func solutionBLoop(listA, listB []int) (result int) {
 	return result
 }
 
-func solutionBMap(listA, listB []int) (result int) {
+func partTwoMap(listA, listB []int) (result int) {
 	setB := map[int]int{}
 	for _, v := range listB {
 		setB[v] = setB[v] + 1
