@@ -41,3 +41,7 @@ func TestMain(m *testing.M) {
 func TestPartOne(t *testing.T) {
 	assert.Equal(t, 472, partOne(levels))
 }
+
+func TestPartTwo(t *testing.T) {
+	assert.Equal(t, 520, partTwo(levels))
+}

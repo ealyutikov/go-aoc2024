@@ -9,7 +9,7 @@ const (
 
 func partOne(levels [][]int) (result int) {
 	for _, line := range levels {
-		if isSafe(line) {
+		if isSafeOne(line) {
 			result++
 		}
 	}
@@ -17,7 +17,17 @@ func partOne(levels [][]int) (result int) {
 	return result
 }
 
-func isSafe(line []int) bool {
+func partTwo(levels [][]int) (result int) {
+	for _, line := range levels {
+		if isSafeTwo(line) {
+			result++
+		}
+	}
+
+	return result
+}
+
+func isSafeOne(line []int) bool {
 	isIncrease, isDecrease := true, true
 	for i := 0; i < len(line)-1; i++ {
 		if line[i]-line[i+1] < MinIncrement || line[i]-line[i+1] > MaxIncrement {
@@ -30,4 +40,19 @@ func isSafe(line []int) bool {
 	}
 
 	return isIncrease || isDecrease
+}
+
+func isSafeTwo(line []int) bool {
+	for i := 0; i < len(line); i++ {
+		if isSafeOne(remove(line, i)) {
+			return true
+		}
+	}
+
+	return false
+}
+
+func remove(line []int, idx int) (res []int) {
+	res = append(res, line[:idx]...)
+	return append(res, line[idx+1:]...)
 }
