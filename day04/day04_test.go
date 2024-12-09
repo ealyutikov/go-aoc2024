@@ -1,7 +1,7 @@
-package day03
+package day04
 
 import (
-	"bytes"
+	"bufio"
 	"log"
 	"os"
 	"testing"
@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-var contents string
+var content []string
 
 func TestMain(m *testing.M) {
 	file, err := os.Open("input.txt")
@@ -19,17 +19,20 @@ func TestMain(m *testing.M) {
 		log.Fatal(err)
 	}
 
-	buf := new(bytes.Buffer)
-	buf.ReadFrom(file)
-	contents = buf.String()
+	scanner := bufio.NewScanner(file)
+	scanner.Split(bufio.ScanLines)
+
+	for scanner.Scan() {
+		content = append(content, scanner.Text())
+	}
 
 	m.Run()
 }
 
 func TestPartOne(t *testing.T) {
-	assert.Equal(t, 472, partOne(contents))
+	assert.Equal(t, 472, partOne(content))
 }
 
 func TestPartTwo(t *testing.T) {
-	assert.Equal(t, 92082041, partTwo(contents))
+	assert.Equal(t, 0, partTwo(content))
 }

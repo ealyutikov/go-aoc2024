@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+//https://adventofcode.com/2024/day/3
+
 func partOne(contents string) (result int) {
 	pattern := regexp.MustCompile(`mul\(([0-9]+),([0-9]+)\)`)
 	matches := pattern.FindAllString(contents, -1)
